@@ -32,6 +32,8 @@
     "express-list-endpoints": "^6.0.0",
     "express-promise-router": "^4.1.1",
     "husky": "^8.0.3",
+    "mongodb": "^6.0.0",
+    "node-dependency-injection": "2.7.3",
     "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {

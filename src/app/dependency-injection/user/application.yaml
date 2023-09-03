@@ -1,0 +1,14 @@
+services:
+    Controller.PutUserController:
+        class: ../../controllers/user/PutUserController
+        arguments: ['@UseCase.RegisterUser']
+    
+    UseCase.RegisterUser:
+        class: ../../../context/user/application/RegistrerUser
+        arguments: ['@Repository.MongoUserRepository']
+
+    Repository.MongoUserRepository:
+        class: ../../../context/user/infractucture/MongoUserRepository
+        arguments: []
+
+

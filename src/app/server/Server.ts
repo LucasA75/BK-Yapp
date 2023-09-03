@@ -13,8 +13,8 @@ export class Server {
 
   constructor(port: number) {
     this.port = port;
-    // this.app.use(express.json());
-    /* this.app.use(express.urlencoded({ extended: true })); */
+    this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: true }));
     const router = Router();
     this.app.use(router);
     registerRoutes(router);
