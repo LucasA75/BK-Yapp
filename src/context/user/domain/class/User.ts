@@ -1,7 +1,6 @@
-import { UUID } from 'mongodb'
 
 export class User {
-  readonly id: Uint8Array = UUID.generate()
+  readonly id: number = 1
   readonly email: string
   readonly password: string
   readonly name: string
@@ -16,7 +15,7 @@ export class User {
     return new User(email, password, name)
   }
 
-  ToPrimitives() {
+  toPrimitives() {
     return {
       id: this.id.toString(),
       email: this.email.toString(),

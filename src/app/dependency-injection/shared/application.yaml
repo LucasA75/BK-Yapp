@@ -1,0 +1,14 @@
+services: 
+  MongoConfig:
+    factory:
+      class: ../../../context\shared\infractucture\persistance\mongo\MongoConfigFactory
+      method: "createConfig"
+    arguments: ["YappDB"]
+
+  ConnectionManager:
+    factory:
+      class: ../../../context\shared\infractucture\persistance\mongo\MongoClientFactory
+      method: "createClient"
+    arguments: ["YappDB", "@MongoConfig"]
+
+   

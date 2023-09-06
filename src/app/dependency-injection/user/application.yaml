@@ -9,6 +9,6 @@ services:
 
     Repository.MongoUserRepository:
         class: ../../../context/user/infractucture/MongoUserRepository
-        arguments: []
+        arguments: ['@ConnectionManager']
 
 

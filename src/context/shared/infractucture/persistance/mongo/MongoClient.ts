@@ -16,7 +16,7 @@ export class ConnectionMongo {
       // eslint-disable-next-line no-console
       console.log('Connected to Mongo')
       const collection = db.collection(collectionName)
-      const result = await collection.insertOne({ _id: undefined, ...user.ToPrimitives() })
+      const result = await collection.insertOne({ _id: undefined, ...user.toPrimitives() })
       // eslint-disable-next-line no-console
       console.log(`Documento insertado con ID: ${result.insertedId}`)
     } finally {
