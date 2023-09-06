@@ -17,8 +17,8 @@ export abstract class MongoRepository<T extends YappClass> {
   protected async persist(id: string, YappClass: T): Promise<void> {
     const collection = await this.collection()
 
-    const document = { ...YappClass.toPrimitives(), _id: undefined, id: undefined }
+    const document = { ...YappClass.toPrimitives(), id: id }
 
-    await collection.updateOne({ _id: undefined }, { $set: document }, { upsert: true })
+    await collection.updateOne({id: id}, { $set: document }, { upsert: true })
   }
 }

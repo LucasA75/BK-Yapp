@@ -1,3 +1,4 @@
-export abstract class YappClass {
+export declare abstract class YappClass {
     abstract toPrimitives(): any;
+    constructor()
 }
