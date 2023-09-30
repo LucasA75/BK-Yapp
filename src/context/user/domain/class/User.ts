@@ -1,12 +1,14 @@
+import { YappClass } from '@context/shared/class/YappClass'
 
-export class User {
+export class User extends YappClass {
   readonly id: number
   readonly email: string
   readonly password: string
   readonly name: string
   readonly creationDate: string
 
-  constructor(email: string, password: string, name: string, id:number) {
+  constructor(email: string, password: string, name: string, id: number) {
+    super()
     this.email = email
     this.password = password
     this.name = name
@@ -14,7 +16,7 @@ export class User {
     this.creationDate = new Date().toISOString()
   }
 
-  static create(email: string, password: string, name: string, id:number): User {
+  static create(email: string, password: string, name: string, id: number): User {
     return new User(email, password, name, id)
   }
 
