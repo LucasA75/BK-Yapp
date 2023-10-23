@@ -22,7 +22,8 @@
     "dev": "nodemon",
     "eslint": "eslint '*/**/*.{js,ts}' --fix --max-warnings=0 --no-error-on-unmatched-pattern",
     "prepare": "husky install",
-    "check-types": "tsc --noemit"
+    "check-types": "tsc --noemit",
+    "test": "jest --passWithNoTests --detectOpenHandles --forceExit" 
   },
   "author": "",
   "license": "ISC",
