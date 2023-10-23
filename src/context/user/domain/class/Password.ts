@@ -1,3 +1,4 @@
+import { ErrorYapp } from '@context/shared/class/ErrorYappClass';
 import crypto from 'crypto';
 
 export class Password {
@@ -23,7 +24,7 @@ export class Password {
   }
 
   verifyMinus(): boolean {
-    if (!this.value.match(/^(?=.*[a-z]).+/)) throw Error('Password must have a Minus letter')
+    if (!this.value.match(/^(?=.*[a-z]).+/)) throw new ErrorYapp('Password must have a Minus letter', 400)
     return true
   }
 
