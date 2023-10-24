@@ -13,6 +13,6 @@ export class ID {
   }
 
   private validateID() {
-    if (!validate(this.value)) throw new ErrorYapp('Invalid ID', 501)
+    if (!validate(this.value)) throw new ErrorYapp('Invalid ID', 400)
   }
 }

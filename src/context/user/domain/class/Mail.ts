@@ -15,6 +15,6 @@ export class Mail {
   private validateMail() {
     const regexCorreoElectronico = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-    if (!regexCorreoElectronico.test(this.value)) throw new ErrorYapp('Invalid Mail', 501)
+    if (!regexCorreoElectronico.test(this.value)) throw new ErrorYapp('Invalid Mail', 400)
   }
 }

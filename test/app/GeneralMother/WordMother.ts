@@ -23,7 +23,7 @@ export class WordMother {
         case 9:
           return '?#1sdas'
         case 10:
-          return '134xSA*as{}1'
+          return '134SA*1'
         default:
           return 'a'
       }
@@ -47,6 +47,6 @@ export class WordMother {
   }
 
   static randomValueWithoutSymbols(): string {
-    return this.generateValue(2).replace( /[^a-zA-Z]/g, '')
+    return this.generateValue(3).replace( /[^a-zA-Z]/g, '')
   }
 }
