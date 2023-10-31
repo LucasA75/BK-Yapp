@@ -5,6 +5,7 @@ import routesSwagger from 'express-list-endpoints'
 import { hostname } from 'os';
 import { registerRoutes } from '../routes';
 import { RouteErrorHandlerResponse } from './RouteErrorHandlerResponse';
+import { ErrorHandlerResponse } from './ErrorHandleResponse';
 
 export class Server {
   private readonly port: number;
@@ -21,6 +22,7 @@ export class Server {
     // eslint-disable-next-line no-console
     console.log(routesSwagger(this.app));
     this.app.use(RouteErrorHandlerResponse);
+    this.app.use(ErrorHandlerResponse)
   }
 
   listen = async (): Promise<void> => {
