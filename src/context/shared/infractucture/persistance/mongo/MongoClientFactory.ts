@@ -30,4 +30,12 @@ export class MongoClientFactory {
   private static registerClient(client: MongoClient, contextName: string): void {
     MongoClientFactory.clients[contextName] = client;
   }
+
+  static async closeAllConnections() {
+    for (const contextName of Object.keys(this.clients)) {
+      const client = this.clients[contextName];
+      await client.close(); // Cierra la conexión
+      delete this.clients[contextName];
+    }
+  }
 }
