@@ -1,11 +1,10 @@
 import { ID } from '../domain/class/ID'
+import { User } from '../domain/class/User'
 import { UserRepository } from '../domain/contract/UserRepository'
 
 export class GetterUser {
   constructor(private repository: UserRepository) {}
-  async run(id: ID) {
-    // eslint-disable-next-line no-console
-    console.log("hOlas")
-    this.repository
+  async run(id: ID): Promise<User> {
+    return this.repository.get(id)
   }
 }
