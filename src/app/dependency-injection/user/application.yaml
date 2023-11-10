@@ -7,6 +7,14 @@ services:
         class: ../../../context/user/application/RegistrerUser
         arguments: ['@Repository.MongoUserRepository']
 
+    Controller.GetUserController:
+        class: ../../controllers/user/GetUserController
+        arguments: ['@UseCase.GetterUser']
+    
+    UseCase.GetterUser:
+        class: ../../../context/user/application/GetterUser
+        arguments: ['@Repository.MongoUserRepository']
+
     Repository.MongoUserRepository:
         class: ../../../context/user/infractucture/MongoUserRepository
         arguments: ['@ConnectionManager']
